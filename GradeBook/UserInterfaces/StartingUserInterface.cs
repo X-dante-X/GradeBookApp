@@ -34,11 +34,6 @@ namespace GradeBook.UserInterfaces
         public static void CreateCommand(string command)
         {
             string[] parts = command.Split(' ');
-            string name = parts[1];
-            string type = parts[2];
-            bool isWeighted = bool.Parse(parts[3]);
-
-            BaseGradeBook gradeBook;
 
             if (parts.Length != 4)
             {
@@ -46,7 +41,11 @@ namespace GradeBook.UserInterfaces
                 return;
             }
 
+            string name = parts[1];
+            string type = parts[2];
+            bool isWeighted = bool.Parse(parts[3]);
 
+            BaseGradeBook gradeBook;
 
             if (type.ToLower() == "standard")
             {
@@ -64,7 +63,6 @@ namespace GradeBook.UserInterfaces
 
             Console.WriteLine("Created gradebook {0}.", name);
             GradeBookUserInterface.CommandLoop(gradeBook);
-
         }
 
         public static void LoadCommand(string command)
