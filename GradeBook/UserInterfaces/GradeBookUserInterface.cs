@@ -8,6 +8,7 @@ namespace GradeBook.UserInterfaces
     {
         public static BaseGradeBook GradeBook;
         public static bool Quit = false;
+
         public static void CommandLoop(BaseGradeBook gradeBook)
         {
             GradeBook = gradeBook;
