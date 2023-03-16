@@ -111,7 +111,7 @@ namespace GradeBook.GradeBooks
         public virtual double GetGPA(char letterGrade, StudentType studentType)
         {
             double gpa = 0;
-            if (studentType == StudentType.Honors || studentType == StudentType.DualEnrolled)
+            if (studentType == StudentType.DualEnrolled && IsWeighted == true || studentType == StudentType.Honors && IsWeighted == true)
             {
                 gpa += 1;
             }
